@@ -1,0 +1,66 @@
+{
+  "name": "luno-bot",
+  "version": "0.0.2",
+  "description": "luno bot",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node --max-old-space-size=8192 bot/index.js",
+    "lint": "gulp",
+    "dev": "npm run lint && ./bin/dev",
+    "test": "ava"
+  },
+  "pre-push": [
+    "lint"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lunohq/luno-bot.git"
+  },
+  "author": "Michael Hahn <michael@lunohq.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lunohq/luno-bot/issues"
+  },
+  "ava": {
+    "require": [
+      "babel-register"
+    ],
+    "babel": "inherit"
+  },
+  "homepage": "https://github.com/lunohq/luno-bot#readme",
+  "dependencies": {
+    "aws-sdk": "^2.3.6",
+    "babel-cli": "^6.11.4",
+    "babel-plugin-transform-runtime": "^6.7.5",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "bluebird": "^3.3.5",
+    "botkit": "0.0.15",
+    "converse": "git+https://1d0cdee693b540fb3b9cd603b01834ec45976ce9:x-oauth-basic@github.com/lunohq/converse.git#v0.0.2-49",
+    "dotenv": "^2.0.0",
+    "hot-shots": "git+https://git@github.com/lunohq/hot-shots.git#41d53a0c3824ffb3fa510f7d6a41161edfe553b5",
+    "lodash": "^4.12.0",
+    "luno-core": "git+https://1d0cdee693b540fb3b9cd603b01834ec45976ce9:x-oauth-basic@github.com/lunohq/luno-core.git#v1.16.1",
+    "memwatch-next": "^0.3.0",
+    "mixpanel": "^0.4.0",
+    "mustache": "^2.2.1",
+    "raven-winston": "0.0.3",
+    "winston": "^2.2.0"
+  },
+  "devDependencies": {
+    "ava": "^0.16.0",
+    "babel-eslint": "^6.0.2",
+    "eslint": "^2.7.0",
+    "eslint-config-airbnb": "^7.0.0",
+    "eslint-plugin-jsx-a11y": "^0.6.2",
+    "eslint-plugin-react": "^4.3.0",
+    "faker": "^3.1.0",
+    "gulp": "^3.9.0",
+    "gulp-eslint": "^2.0.0",
+    "gulp-jscs": "^3.0.0",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-util": "^3.0.7",
+    "pre-push": "^0.1.1"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "preset": "airbnb",
+  "maximumLineLength": null,
+  "esnext": true,
+  "disallowSpacesInsideObjectBrackets": null,
+  "requirePaddingNewLinesBeforeLineComments": null,
+  "requirePaddingNewLinesAfterBlocks": null,
+  "disallowSemicolons": true,
+  "requireSemicolons": null,
+  "requireCamelCaseOrUpperCaseIdentifiers": null
+}

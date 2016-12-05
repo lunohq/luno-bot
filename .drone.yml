@@ -1,0 +1,27 @@
+build:
+  image: node:5.10.1
+  commands:
+    - npm install --production
+
+cache:
+  mount:
+    - node_modules
+    - .git
+
+publish:
+  docker:
+    username: $$DOCKER_USERNAME
+    password: $$DOCKER_PASSWORD
+    email: $$DOCKER_EMAIL
+    repo: lunohq/luno-bot
+    tag:
+      - latest
+      - $$COMMIT
+
+notify:
+  slack:
+    webhook_url: $$SLACK_WEBHOOK_URL
+    channel: ops
+    template: >
+      *{{ build.status }}* <{{ system.link_url }}/{{ repo.full_name }}/{{ build.number }}|{{ repo.owner }}/{{ repo.name }}#{{ build.commit }}> ({{ build.branch }}) by {{ build.author }}
+      ```emp deploy {{ repo.owner }}/{{ repo.name }}:{{ build.commit }}```
